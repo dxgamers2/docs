@@ -1,0 +1,97 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "FLSRP",
+  "description": "G2 Esports FiveM roleplay server — guides, rules, and community resources for players.",
+  "colors": {
+    "primary": "#7c7c7c",
+    "light": "#111111",
+    "dark": "#d9d6d6"
+  },
+  "favicon": "https://media.brand.dev/7cdd30cf-1ccb-47aa-acb2-f7a696265dff.jpg",
+  "logo": {
+    "light": "https://media.brand.dev/a20e404b-cf98-4445-b9c0-7ed04377cfc2.png",
+    "dark": "https://media.brand.dev/a20e404b-cf98-4445-b9c0-7ed04377cfc2.png"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "/"
+        },
+        {
+          "anchor": "Discord",
+          "icon": "message-circle",
+          "href": "https://discord.gg/g2esports"
+        }
+      ]
+    },
+    "directory": "card",
+    "groups": [
+      {
+        "group": "Get Started",
+        "icon": "rocket",
+        "expanded": true,
+        "pages": [
+          "introduction",
+          "quickstart",
+          "rules"
+        ]
+      },
+      {
+        "group": "Gameplay",
+        "icon": "gamepad-2",
+        "expanded": true,
+        "pages": [
+          "gameplay/characters",
+          "gameplay/jobs",
+          "gameplay/economy",
+          "gameplay/criminal-activities"
+        ]
+      },
+      {
+        "group": "Community",
+        "icon": "users",
+        "expanded": true,
+        "pages": [
+          "community/discord",
+          "community/applications",
+          "community/staff"
+        ]
+      },
+      {
+        "group": "Support",
+        "icon": "life-buoy",
+        "expanded": true,
+        "pages": [
+          "support/faq",
+          "support/troubleshooting",
+          "support/ban-appeals"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/dxgamers2/FLSRP"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/G2esports"
+    }
+  }
+}

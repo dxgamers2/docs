@@ -1,0 +1,60 @@
+{
+  "projectType": "saas",
+  "projectName": "FLSRP",
+  "projectDescription": "G2 Esports FiveM roleplay server — a community-driven GTA RP experience with custom rules, whitelisted jobs, and player progression.",
+  "theme": "willow",
+  "primaryColor": "#7c7c7c",
+  "lightColor": "#111111",
+  "darkColor": "#d9d6d6",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "rules"
+            ]
+          },
+          {
+            "group": "Gameplay",
+            "pages": [
+              "gameplay/characters",
+              "gameplay/jobs",
+              "gameplay/economy",
+              "gameplay/criminal-activities"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "community/discord",
+              "community/applications",
+              "community/staff"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting",
+              "support/ban-appeals"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Custom FiveM roleplay server under the G2 Esports brand",
+    "Whitelisted jobs and civilian career paths",
+    "Player-driven economy and business ownership",
+    "Criminal faction system with structured hierarchies",
+    "Community Discord integration for applications and support",
+    "Staff-moderated environment with clear ruleset"
+  ],
+  "publicApiSurface": []
+}

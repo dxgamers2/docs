@@ -1,0 +1,162 @@
+---
+title: "FLSRP Troubleshooting: Connection, Loading, and Audio"
+description: "Fix the most common FLSRP technical issues: connection failures, loading freezes, high ping, texture errors, unexpected kicks, and voice chat problems."
+sidebarTitle: "Troubleshooting"
+---
+
+Most technical issues with FLSRP can be resolved by following the steps below. Work through the section that matches your problem before opening a support ticket — the majority of connection, loading, and audio issues have straightforward fixes that don't require staff assistance.
+
+<Note>
+  Before troubleshooting, check the **#announcements** channel in the FLSRP Discord. If the server is undergoing maintenance or experiencing a known outage, the issue is on our end and no action is needed on yours.
+</Note>
+
+<AccordionGroup>
+  <Accordion title="Can't connect to the server">
+    If you're unable to connect to FLSRP, work through these checks in order:
+
+    <Steps>
+      <Step title="Confirm your whitelist status">
+        FLSRP is a whitelisted server. If your application hasn't been approved yet, you won't be able to connect. Check your application status in Discord. If you were previously whitelisted, check whether you received any communication about a ban or removal.
+      </Step>
+      <Step title="Update FiveM">
+        An outdated FiveM client is one of the most common causes of connection failures. Close FiveM completely, then relaunch it. FiveM will automatically download and apply any available updates before the server browser loads.
+      </Step>
+      <Step title="Try a direct connection">
+        Instead of using the server browser, connect directly using the server IP address:
+
+        1. Open FiveM and press **F8** to open the console.
+        2. Type `connect <server-ip>` and press Enter (the current IP is pinned in the #connect-info channel on Discord).
+
+        Direct connect bypasses server browser caching issues that can cause failed connections.
+      </Step>
+      <Step title="Check FiveM's service status">
+        FiveM's authentication and licensing servers occasionally go down. Visit the [FiveM status page](https://status.cfx.re) to check for any active incidents affecting connectivity.
+      </Step>
+      <Step title="Disable your VPN or firewall temporarily">
+        VPNs and strict firewall rules can block FiveM's connection. Temporarily disable them and attempt to connect again. If this resolves the issue, add FiveM as an exception in your firewall or switch to a different VPN server.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Game freezes during loading">
+    A freeze on the loading screen — especially during resource loading — is typically caused by a corrupted cache or graphics settings that are too high for your hardware.
+
+    <Steps>
+      <Step title="Clear the FiveM cache">
+        Clearing the cache forces FiveM to redownload server resources cleanly, resolving most loading freezes:
+
+        1. Close FiveM completely.
+        2. Open File Explorer and navigate to `%localappdata%\FiveM\FiveM.app\cache` (you can paste this path directly into the address bar).
+        3. Delete all folders inside the `cache` directory. Do not delete the `cache` folder itself — only its contents.
+        4. Relaunch FiveM. The initial connection will take longer than usual as resources are redownloaded.
+      </Step>
+      <Step title="Lower your graphics settings">
+        High graphics settings can cause the game to stall during loading on systems with limited VRAM or RAM. In GTA V's settings, reduce:
+
+        - **Texture Quality** to Normal or High
+        - **Shader Quality** to Normal
+        - **Shadow Quality** to Normal
+        - Disable **Extended Distance Scaling**
+
+        Apply the changes, restart FiveM, and attempt to connect again.
+      </Step>
+      <Step title="Check available disk space">
+        FiveM requires free disk space to cache server resources. Make sure you have at least **10 GB** of free space on the drive where FiveM is installed.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="High ping / rubber-banding">
+    Rubber-banding (your character snapping back to previous positions) is a symptom of high latency between your machine and the server. These steps can significantly reduce your ping:
+
+    <Steps>
+      <Step title="Close bandwidth-heavy background applications">
+        Streaming services, cloud backups, torrent clients, and large downloads all compete for bandwidth. Close any applications that aren't essential while you play.
+      </Step>
+      <Step title="Switch to a wired connection">
+        Wi-Fi introduces latency and packet loss that a wired Ethernet connection avoids entirely. If you're on Wi-Fi, try plugging directly into your router. Even if a permanent wired setup isn't practical, testing wired confirms whether Wi-Fi is the cause.
+      </Step>
+      <Step title="Restart your router">
+        A simple router restart clears stale routing tables and can reduce ping. Power cycle your router by unplugging it, waiting 30 seconds, and plugging it back in.
+      </Step>
+      <Step title="Check server status on Discord">
+        If your connection is stable but you're still experiencing rubber-banding, the server itself may be under high load. Check the #server-status channel in Discord for any announcements about performance degradation.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Missing resources / texture errors">
+    If you see pink/black textures, missing props, or error messages referencing failed resource loads, follow these steps:
+
+    <Steps>
+      <Step title="Clear the FiveM cache">
+        Missing or corrupt cached resources are the most common cause of texture errors. Clear the cache by navigating to `%localappdata%\FiveM\FiveM.app\cache` and deleting all folder contents, then reconnect to the server.
+      </Step>
+      <Step title="Verify your GTA V game files">
+        Corrupt GTA V files can also cause texture issues. Verify your installation through the platform you purchased the game on:
+
+        - **Steam**: Right-click GTA V in your library → Properties → Local Files → Verify integrity of game files.
+        - **Rockstar Games Launcher**: Click on GTA V → Settings → Verify Integrity.
+        - **Epic Games Store**: Click the three dots next to GTA V → Manage → Verify.
+
+        Allow the verification to complete fully before relaunching FiveM.
+      </Step>
+      <Step title="Reinstall FiveM">
+        If neither step above resolves the issue, uninstall FiveM, download a fresh copy from [fivem.net](https://fivem.net), and reinstall it. This replaces any corrupted FiveM core files.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Got kicked from the server">
+    Automatic kicks happen for a few specific reasons. Identifying the cause will tell you how to proceed:
+
+    | Kick reason | What it means | What to do |
+    |---|---|---|
+    | High ping / timeout | Your connection to the server dropped or exceeded the latency threshold | Follow the high ping steps above, then reconnect |
+    | Anti-cheat flag | The server's anti-cheat system detected a modified file or suspicious behavior | Ensure no mods or trainers are running; if you believe this is a false positive, open a support ticket |
+    | AFK timeout | You were inactive for too long | Reconnect normally |
+    | Resource download error | A resource failed to download during connection | Clear your FiveM cache and reconnect |
+
+    <Warning>
+      If you were kicked for an anti-cheat flag and you believe it was a false positive, do not attempt to reconnect repeatedly. Open a support ticket in Discord to have your account reviewed by staff before reconnecting.
+    </Warning>
+
+    For a clean reconnect, wait 60 seconds after being kicked before attempting to join again.
+  </Accordion>
+
+  <Accordion title="Audio or voice chat not working">
+    If other players can't hear you, or you can't hear them, work through the following:
+
+    <Steps>
+      <Step title="Check FiveM voice settings">
+        In the FiveM settings menu, navigate to **Voice Chat** and confirm that:
+
+        - Voice chat is enabled.
+        - The correct input device (your microphone) is selected.
+        - Your input volume is above zero.
+
+        Use the microphone test within FiveM settings to confirm your mic is being picked up.
+      </Step>
+      <Step title="Disable the Discord overlay">
+        The Discord in-game overlay is known to conflict with FiveM's voice system. Disable it by opening Discord → User Settings → Game Overlay → toggle off "Enable in-game overlay". Restart FiveM after disabling.
+      </Step>
+      <Step title="Check Windows microphone permissions">
+        Windows may be blocking FiveM from accessing your microphone:
+
+        1. Open **Windows Settings** → Privacy & Security → Microphone.
+        2. Ensure "Microphone access" is turned on.
+        3. Scroll down and confirm that FiveM (or the FiveM application) is listed and allowed.
+      </Step>
+      <Step title="Set your default playback device">
+        If you're using multiple audio output devices (e.g., headset and speakers), make sure your headset is set as the Windows default playback device. Open the system tray → right-click the speaker icon → Sound settings → select your headset as the output device.
+      </Step>
+      <Step title="Reinstall audio drivers">
+        Outdated or corrupt audio drivers can prevent voice chat from functioning. Visit your headset or motherboard manufacturer's website and download the latest audio drivers for your hardware.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  If you've worked through the relevant steps above and the issue persists, open a support ticket in the **#support-tickets** channel on Discord. Include a description of the problem, the steps you've already tried, and any error messages you saw. The more detail you provide, the faster staff can help you.
+</Tip>
